@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="title_label" style="-fx-background-color: #100000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sample.Controller">
+   <children>
+      <Label fx:id="Main_title_label" layoutX="14.0" layoutY="14.0" text="BTC Tracker" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentpricelabel_label" layoutX="26.0" layoutY="43.0" text="Current Price: " textFill="WHITE" />
+      <TabPane fx:id="main_tabpane" layoutX="56.0" layoutY="107.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="100.0">
+        <tabs>
+          <Tab fx:id="day_tab" text="Day">
+               <content>
+                  <LineChart fx:id="day_chart" style="-fx-background-color: white;" title="Day">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </content></Tab>
+          <Tab fx:id="hour_tab" text="Hour">
+               <content>
+                  <LineChart fx:id="hour_chart" style="-fx-background-color: white;" title="Hour">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </content></Tab>
+            <Tab fx:id="minute_tab" text="Minute">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="minute_chart" layoutX="-1.0" layoutY="-1.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: white;" title="Minute" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label fx:id="currentprice_label" layoutX="115.0" layoutY="43.0" text="123" textFill="WHITE" />
+      <Label fx:id="pricechangelabel_label" layoutX="26.0" layoutY="60.0" text="Price Change:" textFill="WHITE" />
+      <Label fx:id="pricechange_label" layoutX="115.0" layoutY="60.0" textFill="WHITE" />
+      <Label fx:id="highlabel_label" layoutX="369.0" layoutY="20.0" text="High:" textFill="WHITE" />
+      <Label fx:id="lowlabel_label" layoutX="369.0" layoutY="43.0" text="Low:" textFill="WHITE" />
+      <Label fx:id="highprice_label" layoutX="415.0" layoutY="20.0" textFill="WHITE" />
+      <Label fx:id="lowprice_label" layoutX="415.0" layoutY="43.0" textFill="WHITE" />
+      <Label layoutX="369.0" layoutY="69.0" text="Open:" textFill="WHITE" />
+      <Label fx:id="openprice_label" layoutX="415.0" layoutY="69.0" textFill="WHITE" />
+   </children>
+</AnchorPane>
